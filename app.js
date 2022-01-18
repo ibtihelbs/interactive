@@ -19,7 +19,7 @@ class comments {
           <span class="name">${data.user.username}</span>
           <span class="date">${data.createdAt}</span>
         </div>
-        <div class="replay hundler">Replay</div>
+        <div class="replay hundler replay-commment">Replay</div>
       </div>
       <div class="content">
         <p>
@@ -107,7 +107,7 @@ class comments {
   display_reply(){
      let wrap=document.querySelectorAll(".wrap");
     console.log(wrap[1]);
-     let replay=document.querySelectorAll(".replay");
+     let replay=document.querySelectorAll(".replay-commment");
      replay.forEach((item, index) => {
             console.log("before event"+index);
             item.addEventListener("click",(e)=>{
