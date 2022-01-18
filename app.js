@@ -223,7 +223,7 @@ class comments {
   }
   /**remove comment */
   async Data_app() {
-    const response = await fetch('data.json');
+    const response = await fetch('db.json');
     const data = await response.json();
     let comment = data.comments;
     //console.log(comment[0])
