@@ -106,10 +106,12 @@ class comments {
   }
   display_reply(){
      let wrap=document.querySelectorAll(".wrap");
-    console.log(wrap);
+    console.log(wrap[1]);
      let replay=document.querySelectorAll(".replay");
      replay.forEach((item, index) => {
+            console.log("before event"+index);
             item.addEventListener("click",(e)=>{
+              console.log("after event"+index);
                wrap[index].style.display="flex"; 
                
             })
@@ -137,7 +139,7 @@ class comments {
             
             alert(typeof(data_id));
             //return;
-            fetch('https://my-json-server.typicode.com/ibtihelbs/interactive/'+data_id, {
+            fetch('https://my-json-server.typicode.com/ibtihelbs/interactive/comments/'+data_id, {
               method: 'PATCH',
               headers: {
                 'Accept': 'application/json', 
@@ -209,12 +211,12 @@ class comments {
             let comment=parent.querySelector(".comments");
             let data_id=comment.getAttribute("data-id");
             alert(data_id);
-            fetch('https://my-json-server.typicode.com/ibtihelbs/interactive/comments'+data_id, {
+            fetch('https://my-json-server.typicode.com/ibtihelbs/interactive/comments/'+data_id, {
               method: 'DELETE'
             })
               .then(res => res.json())
               .then(data => {
-                // Do some stuff...
+                console.log(data);
               })
               .catch(err => console.log(err));
           }
