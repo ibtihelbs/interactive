@@ -136,7 +136,7 @@ class comments {
             
             alert(typeof(data_id));
             //return;
-            fetch('http://localhost:3000/comments/'+data_id, {
+            fetch('https://my-json-server.typicode.com/ibtihelbs/interactive/'+data_id, {
               method: 'PATCH',
               headers: {
                 'Accept': 'application/json', 
@@ -167,7 +167,7 @@ class comments {
              let content=element.querySelector("textarea").value;
              //console.log(content);
              /**?author.name=typicode */
-            fetch('http://localhost:3000/comments', {
+            fetch('https://my-json-server.typicode.com/ibtihelbs/interactive/', {
             method: 'POST',
             headers: {
               'Accept': 'application/json', 
@@ -207,7 +207,7 @@ class comments {
             let comment=parent.querySelector(".comments");
             let data_id=comment.getAttribute("data-id");
             alert(data_id);
-            fetch('http://localhost:3000/comments/'+data_id, {
+            fetch('https://my-json-server.typicode.com/ibtihelbs/interactive/comments'+data_id, {
               method: 'DELETE'
             })
               .then(res => res.json())
