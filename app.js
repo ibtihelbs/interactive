@@ -167,7 +167,7 @@ class comments {
              let content=element.querySelector("textarea").value;
              //console.log(content);
              /**?author.name=typicode */
-            fetch('https://my-json-server.typicode.com/ibtihelbs/interactive/', {
+            fetch('https://my-json-server.typicode.com/ibtihelbs/interactive/comments', {
             method: 'POST',
             headers: {
               'Accept': 'application/json', 
