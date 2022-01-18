@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap");
+:root {
+  --Moderate-blue: hsl(231, 90%, 69%);
+  --Soft-Red: hsl(358, 79%, 66%);
+  --Light-grayish-blue: hsl(229, 58%, 85%);
+  --Pale-red: hsl(357, 100%, 86%);
+
+  --Dark-blue: hsl(212, 24%, 26%);
+  --Grayish-Blue: hsl(211, 10%, 45%);
+  --Light-gray: hsl(223, 19%, 93%);
+  --Very-light-gray: hsl(228, 33%, 97%);
+  --White: hsl(0, 0%, 100%);
+}
+body {
+  font-family: Rubik;
+  background-color: var(--Light-gray);
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+  gap: 1rem;
+}
+section {
+  width: 80%;
+  background-color: var(--White);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  height: 150px;
+}
+.thumbnail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.image {
+  display: flex;
+
+  align-items: center;
+  gap: 1rem;
+}
+button {
+  background-color: var(--Very-light-gray);
+  border: 1px solid transparent;
+  cursor: pointer;
+  position: relative;
+}
+.minus {
+  background-color: var(--Very-light-gray);
+}
+.minus img {
+  transform: translateY(50%);
+}
+.operator {
+  color: var(--Grayish-Blue);
+  /*! display: flex; */
+  /*! align-items: center; */
+  padding: 0.1rem;
+}
+.score {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 1rem;
+  border-radius: 20%;
+  height: 100px;
+}
+.score > * {
+  height: 33%;
+}
+.name {
+  color: var(--Dark-blue);
+  font-weight: bold;
+}
+.date {
+  color: var(--Dark-blue);
+}
+.number-score {
+  color: var(--Moderate-blue);
+  font-weight: bold;
+}
+.replay:hover {
+  cursor: pointer;
+}
+.replay:before {
+  content: url(images/icon-reply.svg);
+}
+p {
+  color: var(--Grayish-Blue);
+}
+.wrap {
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+  gap: 1rem;
+  display: none;
+  width: 100%;
+}
+.replay-comments {
+  margin-left: 4rem;
+  width: calc(80%-10rem);
+  width: calc(80% - 4rem);
+}
+
+.replay-comments:before {
+  content: "";
+  position: absolute;
+  left: -2rem;
+  width: 3px;
+  height: 110%;
+  background-color: var(--Light-grayish-blue);
+}
+.replay-comments:first-child:before {
+  transform: translateX(50%);
+}
+.hundler button {
+  font-size: 14px;
+  background-color: transparent;
+}
+textarea {
+  width: 69%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  height: 80%;
+  border-radius: 10px;
+  border: 1px solid var(--Light-gray);
+  font-family: inherit;
+  outline: none;
+  padding: 1rem;
+  resize: none;
+}
+.send {
+  background-color: var(--Moderate-blue);
+  padding: 0.5rem 1.5rem;
+  color: var(--White);
+  border-radius: 10px;
+}
+/*
+----------------------
+the user's comment section
+------------------------------------
+*/
+.user-comment .name::after {
+  content: "YOU";
+  background-color: var(--Moderate-blue);
+  font-size: 12px;
+  color: var(--White);
+  margin-left: 0.5rem;
+}
+
+.delete {
+  color: var(--Soft-Red);
+  margin-right: 1rem;
+}
+.edit {
+  color: var(--Dark-blue);
+}
+.delete::before {
+  content: url(images/icon-delete.svg);
+}
+.edit::before {
+  content: url(images/icon-edit.svg);
+}
+/*delete comment*/
+.delete-comment {
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.delete-comment-wrap {
+  width: 300px;
+  background-color: var(--White);
+  border-radius: 10px;
+  padding: 1rem;
+}
+.delete-comment-wrap h1 {
+  color: var(--Dark-blue);
+}
+.buttons-delete {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.buttons-delete button {
+  color: white;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 15px;
+  text-transform: uppercase;
+  transition: all 1s ease-in-out;
+}
+.delete-btn {
+  background-color: var(--Soft-Red);
+}
+.delete-btn:hover {
+  background-color: var(--Pale-red);
+}
+.cancel-btn {
+  background-color: var(--Grayish-Blue);
+}
+.cancel-btn:hover {
+  background-color: var(--Dark-blue);
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: 12px;
+  }
+  section {
+    flex-direction: column;
+    height: auto;
+    position: relative;
+  }
+  .score {
+    order: 2;
+    flex-direction: row;
+    justify-content: left;
+    width: 100%;
+    height: auto;
+  }
+
+  .hundler {
+    position: absolute;
+    /*! right: 0; */
+    bottom: 1rem;
+    right: 1rem;
+  }
+  .image {
+    gap: 0.5rem;
+  }
+  .replay-comments {
+    margin-left: 1rem;
+    width: calc(80% - 1rem);
+  }
+  .replay-comments::before {
+    margin-left: 1rem;
+  }
+}
