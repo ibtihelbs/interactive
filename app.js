@@ -106,6 +106,7 @@ class comments {
   }
   display_reply(){
      let wrap=document.querySelectorAll(".wrap");
+    console.log(wrap);
      let replay=document.querySelectorAll(".replay");
      replay.forEach((item, index) => {
             item.addEventListener("click",(e)=>{
