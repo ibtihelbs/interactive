@@ -186,7 +186,8 @@ class comments {
                 "username": "juliusomo"
             },
             replies: []})
-          });
+          }).then((response) => response.json())
+          .then((json) => console.log(json));;
         })
        });
   }
