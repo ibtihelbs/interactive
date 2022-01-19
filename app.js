@@ -173,8 +173,8 @@ class comments {
             fetch('https://my-json-server.typicode.com/ibtihelbs/interactive/comments', {
             method: 'POST',
             headers: {
-              'Accept': 'application/json', 
-              'Content-Type': 'application/json'
+         
+              'Content-Type': 'application/json; charset=UTF-8'
             },
             body: JSON.stringify({
             content: content,
